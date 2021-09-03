@@ -1,0 +1,34 @@
+title situation where the user creates a new note on page https://studies.cs.helsinki.fi/exampleapp/notes by writing something into the text field and clicking the submit button
+
+
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+note right of server: Server thinks about it
+server-->client: index.html
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->client: main.css
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->client: main.js
+
+note over client:
+browser starts executing js-code
+that requests JSON data from server
+end note
+
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->client: [{ content: "HTML is easy", date: "2019-05-23" }, ...]
+
+note over client:
+browser executes the event handler
+that renders notes to display
+end note
+
+client->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note 
+server-->client: HTTP 302 url_redirect
+
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+note right of server: Server thinks about it
+server-->client: index.html
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->client: main.css
+client->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->client: main.js
