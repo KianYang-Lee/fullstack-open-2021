@@ -19,7 +19,6 @@ const App = () => {
     axios
       .get('http://localhost:3001/persons')
       .then(response => {
-        console.log(response.data);
         setPersons(response.data);
       });
   }, []);
@@ -54,14 +53,13 @@ const App = () => {
   };
 
   const filteredPersons = persons.filter(person => person.name.toLowerCase().includes(newFilter.toLowerCase()));
-  console.log(filteredPersons);
 
   return (
     <div>
       <h2>Phonebook</h2>
       <Filter filter={newFilter} onChange={handleFilterChange} />
       <h2>add a new</h2>
-      <PersonForm onSubmit={addName} newName={newName} newNumber={newNumber}
+      <PersonForm addName={addName} newName={newName} newNumber={newNumber}
         handleNameChange={handleNameChange} handleNumberChange={handleNumberChange}
       />
       <h2>Numbers</h2>
