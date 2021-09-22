@@ -174,7 +174,16 @@ app.post('/api/notes', (request, response) => {
   response.json(note);
 });
 
+// Define middleware
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: 'unknown endpoint' });
+};
+// Use custom middleware
+app.use(unknownEndpoint);
+
+
 const PORT = 3002;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
