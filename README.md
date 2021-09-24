@@ -52,6 +52,10 @@ To test out JS code, we can use `node-repl`. The interactive mode can be initiat
 
 ```node```
 
+To create production build for app serving， run the following to create a new directory `build` with minified version of our code:
+
+```npm run build```
+
 ## nodemon command
 
 `nodemon` saves us the trouble of restarting the server everytime changes are made. But we need to first install it into the project root by:
@@ -66,3 +70,5 @@ Else we can also define it in `package.json` to save typing hassles. To start se
 
 ```npm run dev```
 
+## Install json-server
+```npx json-server --port 3001 --watch db.json```
