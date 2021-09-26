@@ -72,3 +72,19 @@ Else we can also define it in `package.json` to save typing hassles. To start se
 
 ## Install json-server
 ```npx json-server --port 3001 --watch db.json```
+
+## Configuring Environment Variables
+
+Environment variables can be configured in `.env` file. Ensure that there are no spaces between assignment operators.
+
+Also, you have to install `dotenv` library.
+
+```npm install dotenv```
+
+The environment variables can then be imported with:
+
+```require('dotenv').config()```
+
+and referencing it with:
+
+```process.env.<VARIABLE>```
