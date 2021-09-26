@@ -89,7 +89,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const Note = require('./models/note');
-const { request, response } = require('express');
 // Order of middleware is important!
 app.use(express.static('build'));
 app.use(express.json());

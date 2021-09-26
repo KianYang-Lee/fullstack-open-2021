@@ -88,3 +88,34 @@ The environment variables can then be imported with:
 and referencing it with:
 
 ```process.env.<VARIABLE>```
+
+## ESlint
+
+The most popular linting library, install with:
+
+```npm install eslint --save-dev```
+
+Initialize a default ESlint configuration with:
+
+```node_modules/.bin/eslint --init```
+
+Inspecting and validating a file like `index.js` can be done using:
+
+```node_modules/.bin/eslint index.js```
+
+Better to create a separate `npm script` for linting by:
+```"lint": "eslint ."```
+
+We also can configure which file to ignore during linting in `.eslintignore` file.
+
+When changes are made to `.eslintrc.js` file, please run the linter for the first time from command line to mitigate any complexities.
+
+## Heroku Commands
+
+To list the list of apps along with info:
+
+```heroku apps:info```
+
+To set an environment in Heroku kernel:
+
+```$ heroku config:set MONGODB_URI=something```

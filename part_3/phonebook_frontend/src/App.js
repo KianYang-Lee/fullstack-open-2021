@@ -91,7 +91,8 @@ const App = () => {
           setNewNumber('');
           setMessage(`Added ${returnedPerson.name}`);
           setTimeout(() => setMessage(null), 5000);
-        });
+        })
+        .catch(error => console.log(error.response.data));
     }
   };
 
