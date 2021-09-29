@@ -9,6 +9,7 @@ Code for exercises discussed in the course can be found at University of Helsink
 - Part 1: [Introduction to React, JavaScript, Component state and event handlers, and how to debug React apps](https://fullstackopen.com/en/part1)
 - Part 2: [Render data collection, forms, getting data and altering data in server](https://fullstackopen.com/en/part2)
 - Part 3: [Implement REST API in Node.js using Express library and storing data into MongoDB](https://fullstackopen.com/en/part3)
+- Part 4: [Strucutre of backend application, Testing the backend, User administration and Token Authentication](https://fullstackopen.com/en/part4)
 
 ## NPM Command
 
