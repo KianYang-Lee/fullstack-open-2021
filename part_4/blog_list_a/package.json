@@ -4,7 +4,7 @@
   "description": "Blog list application that allows users to save information about interesting blogs they have stumbled across on the internet.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --verbose",
     "dev": "nodemon index.js"
   },
   "author": "Lee Kian Yang",
@@ -17,6 +17,10 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
+    "jest": "^27.2.3",
     "nodemon": "^2.0.13"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
