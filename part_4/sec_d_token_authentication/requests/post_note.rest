@@ -1,0 +1,40 @@
+# With token
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt5bGVlIiwiaWQiOiI2MTU2YmZjZjE0ZmU4NDg3ZjNjNTY5YzMiLCJpYXQiOjE2MzMwNzcwOTR9.acMol_EAvOR2N97yKAg6fbnRiaupbp3FRr8uRqiY_IY
+
+{
+  "content": "User id of the note creator is at the start sent along the request",
+  "important": true
+}
+
+##################
+# Without Authorization header
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "User id of the note creator is at the start sent along the request",
+  "important": true,
+  "userId": "61569649f5222e23c4d79aa4"
+}
+
+###################
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "Am hungry now",
+  "important": true,
+  "userId": "61569649f5222e23c4d79aa4"
+}
+
+#################
+# Invalid request
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "LOL",
+  "important": true
+}

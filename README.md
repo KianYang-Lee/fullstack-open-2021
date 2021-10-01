@@ -142,3 +142,16 @@ Caveats with testing mongoose using `Jest`: https://mongoosejs.com/docs/jest.htm
 - `express-async-errors`: to help refactor code to elinate try/catch structure
 - `bcrypt`: for generating password hashes
 - `mongoose-unique-validator`: for checking the uniqueness of a field for MongoDB
+- `jsonwebtoken`: to generate JSON web tokens
+
+## Probles of Token-based Authentication
+
+API would have blind trust to token holder, and mechanism should be put in-place to revoke access rights of token holder.
+
+Two solutions for this:
+1. Limiting validity period of a token by client-side (client side session)
+2. Saving each token to backend database and to check for each API request if the access right corresponding to the token is still valid.
++ The server can revoke access rights of token anytime (server side session).
+- Performance taken a hit as DB access is needed, usually Redis is used for such scenarios where speed is required.
+
+Instead of Authorization-header, cookies are also commonly used as mechanism for transferring token between the client and server.
