@@ -120,3 +120,23 @@ To list the list of apps along with info:
 To set an environment in Heroku kernel:
 
 ```$ heroku config:set MONGODB_URI=something```
+
+## Jest
+
+Jest is the JS testing framework used internally by Facebook, especially suitable for React.
+
+Commands to execute tests have been defined in `npm`, you can run all tests by:
+
+```npm test```
+
+Alternatively, to just run a single test (or describe block), do:
+
+```npm test -- -t <test_name>```
+
+Caveats with testing mongoose using `Jest`: https://mongoosejs.com/docs/jest.html
+
+## Other Libraries
+
+- `supertest`: help in writing tests for testing the API
+- `cross-env`: to solve cross-platform compality issue when defining node environment
+- `express-async-errors`: to help refactor code to elinate try/catch structure

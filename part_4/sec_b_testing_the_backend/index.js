@@ -1,12 +1,9 @@
-// ============= STRUCTURE OF BACKEND APPLICATION & ============== //
-// ============ INTRODUCTION TO TESTING ========================== //
+// ============= TESTING THE BACKEND ========================== //
 
-// This file only imports actual application from `app.js` file
-//  and then starts the application.
 
-const app = require('./app'); // the actual Express application
+const app = require('./app');
 const http = require('http');
-const config = require('./utils/config'); // access environment variables by importing 
+const config = require('./utils/config');
 const logger = require('./utils/logger');
 
 const server = http.createServer(app);

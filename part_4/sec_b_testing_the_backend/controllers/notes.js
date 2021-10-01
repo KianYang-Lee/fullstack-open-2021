@@ -1,30 +1,26 @@
-// Event handlers of routes are commonly referred as controllers
-// All route handlers have been moved into a dedicated module
-
-// Export the router to be available for all consumers of the module
-// Router is a middleware for defining "related routes" in a single place
 const notesRouter = require('express').Router();
 const Note = require('../models/note');
 
-notesRouter.get('/', (request, response) => {
-  Note.find({}).then(notes => {
-    response.json(notes);
-  });
+// Using async/await syntax introduced in ES7
+notesRouter.get('/', async (request, response) => {
+  const notes = await Note.find({});
+  response.json(notes);
 });
 
-notesRouter.get('/:id', (request, response, next) => {
-  Note.findById(request.params.id)
-    .then(note => {
-      if (note) {
-        response.json(note);
-      } else {
-        response.json(404).end();
-      }
-    })
-    .catch(error => next(error));
+notesRouter.get('/:id', async (request, response, next) => {
+  try {
+    const note = await Note.findById(request.params.id);
+    if (note) {
+      response.json(note);
+    } else {
+      response.status(404).end();
+    }
+  } catch (exception) {
+    next(exception);
+  }
 });
 
-notesRouter.post('/', (request, response, next) => {
+notesRouter.post('/', async (request, response, next) => {
   const body = request.body;
 
   const note = new Note({
@@ -33,19 +29,22 @@ notesRouter.post('/', (request, response, next) => {
     date: new Date()
   });
 
-  note.save()
-    .then(savedNote => {
-      response.json(savedNote);
-    })
-    .catch(error => next(error));
+  // Use try/catch to handle exceptions
+  try {
+    const savedNote = await note.save();
+    response.json(savedNote);
+  } catch (exception) {
+    // Passes the request handling to the error 
+    //  handling middleware
+    next(exception);
+  }
+
 });
 
-notesRouter.delete('/:id', (request, response, next) => {
-  Note.findByIdAndRemove(request.params.id)
-    .then(() => {
-      response.status(204).end();
-    })
-    .catch(error => next(error));
+notesRouter.delete('/:id', async (request, response, next) => {
+  // Using express-async-error library
+  await Note.findByIdAndRemove(request.params.id);
+  response.status(204).end();
 });
 
 notesRouter.put('/:id', (request, response, next) => {
