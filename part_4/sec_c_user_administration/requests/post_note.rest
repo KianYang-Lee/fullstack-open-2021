@@ -1,0 +1,28 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "User id of the note creator is at the start sent along the request",
+  "important": true,
+  "userId": "61569649f5222e23c4d79aa4"
+}
+
+###################
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "Am hungry now",
+  "important": true,
+  "userId": "61569649f5222e23c4d79aa4"
+}
+
+#################
+# Invalid request
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "LOL",
+  "important": true
+}

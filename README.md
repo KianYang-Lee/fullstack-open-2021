@@ -140,3 +140,5 @@ Caveats with testing mongoose using `Jest`: https://mongoosejs.com/docs/jest.htm
 - `supertest`: help in writing tests for testing the API
 - `cross-env`: to solve cross-platform compality issue when defining node environment
 - `express-async-errors`: to help refactor code to elinate try/catch structure
+- `bcrypt`: for generating password hashes
+- `mongoose-unique-validator`: for checking the uniqueness of a field for MongoDB
