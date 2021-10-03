@@ -27,9 +27,8 @@ notesRouter.get('/:id', async (request, response, next) => {
 // Isolate token  authorization header and
 const getTokenFrom = request => {
   const authorization = request.get('authorization');
-  console.log(authorization);
+
   if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
-    console.log(authorization.substring(7));
     return authorization.substring(7);
   }
   return null;
@@ -39,7 +38,6 @@ const getTokenFrom = request => {
 // Using Bearer scheme on Authorization header
 notesRouter.post('/', async (request, response) => {
   const body = request.body;
-  console.log(body);
   const token = getTokenFrom(request);
 
   //  check validity with `jwt.verify`
