@@ -1,6 +1,7 @@
+// 5.5 Step 5: Toggling BlogForm
+
 import React, { useState, useImperativeHandle } from 'react';
 
-// forwardRef function call allows component access to the ref that is assigned.
 const Togglable = React.forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
 
@@ -11,8 +12,6 @@ const Togglable = React.forwardRef((props, ref) => {
     setVisible(!visible);
   };
 
-  // This is a React hook to define functions in a component
-  //  which can be invoked from outside of the component.
   useImperativeHandle(ref, () => {
     return {
       toggleVisibility
@@ -25,7 +24,6 @@ const Togglable = React.forwardRef((props, ref) => {
         <button onClick={toggleVisibility}>{props.buttonLabel}</button>
       </div>
       <div style={showWhenVisible}>
-        {/* props.children refers to child component, which is LoginForm */}
         {props.children}
         <button onClick={toggleVisibility}>cancel</button>
       </div>
