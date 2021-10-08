@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Implement error message
 const Notification = ({ message }) => {
   if (message === null) {

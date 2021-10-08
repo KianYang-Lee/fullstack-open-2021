@@ -145,6 +145,8 @@ Caveats with testing mongoose using `Jest`: https://mongoosejs.com/docs/jest.htm
 - `bcrypt`: for generating password hashes
 - `mongoose-unique-validator`: for checking the uniqueness of a field for MongoDB
 - `jsonwebtoken`: to generate JSON web tokens
+- `prop-types`: to ensure a prop as mandatory or required string-type prop
+- `eslint-plugin-jest`: to avoid undesired and irrelevant linter errors when testing frontend
 
 ## Probles of Token-based Authentication
 
