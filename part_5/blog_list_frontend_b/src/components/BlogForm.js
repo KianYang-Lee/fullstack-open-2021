@@ -1,6 +1,6 @@
 // 5.6 Step 6: Separating BlogForm
 
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const BlogForm = ({ createBlog }) => {
   const [title, setTitle] = useState('');
