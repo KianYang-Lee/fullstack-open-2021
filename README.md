@@ -147,6 +147,7 @@ Caveats with testing mongoose using `Jest`: https://mongoosejs.com/docs/jest.htm
 - `jsonwebtoken`: to generate JSON web tokens
 - `prop-types`: to ensure a prop as mandatory or required string-type prop
 - `eslint-plugin-jest`: to avoid undesired and irrelevant linter errors when testing frontend
+- `@testing-library/react` & `@testing-library/jest-dom`: to test React app (by default it runs in watch mode. To execute only once, use `CI=true npm test`. To find out coverage of tests: `CI=true npm test -- --coverage`)
 
 ## Probles of Token-based Authentication
 
@@ -159,3 +160,10 @@ Two solutions for this:
 - Performance taken a hit as DB access is needed, usually Redis is used for such scenarios where speed is required.
 
 Instead of Authorization-header, cookies are also commonly used as mechanism for transferring token between the client and server.
+
+## Testing
+There are different kinds of testing:
+- Unit testing
+- Integration testing
+- End-to-end testing
+- Snapshot testing
