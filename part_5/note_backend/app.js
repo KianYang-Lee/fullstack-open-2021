@@ -9,6 +9,7 @@ const logger = require('./utils/logger');
 const mongoose = require('mongoose');
 const usersRouter = require('./controllers/users');
 const loginRouter = require('./controllers/login');
+const process = require('process');
 
 logger.info('connecting to', config.MONGODB_URI);
 
@@ -26,14 +27,13 @@ app.use(express.static('build'));
 app.use(express.json());
 app.use(middleware.requestLogger);
 
-// Router is used if URL starts with /api/notes
 app.use('/api/notes', notesRouter);
-
-// Router is used if URL starts with /api/users
 app.use('/api/users', usersRouter);
-
-// Router is used if URL starts with /api/login
 app.use('/api/login', loginRouter);
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./controllers/testing');
+  app.use('/api/testing', testingRouter);
+}
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

@@ -148,6 +148,10 @@ Caveats with testing mongoose using `Jest`: https://mongoosejs.com/docs/jest.htm
 - `prop-types`: to ensure a prop as mandatory or required string-type prop
 - `eslint-plugin-jest`: to avoid undesired and irrelevant linter errors when testing frontend
 - `@testing-library/react` & `@testing-library/jest-dom`: to test React app (by default it runs in watch mode. To execute only once, use `CI=true npm test`. To find out coverage of tests: `CI=true npm test -- --coverage`)
+- `cypress`: end-to-end testing library. It requires some extra configurations on the system to work. Guide can be found at https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies .
+
+It could be kinda tricky if you are remoting a WSL. Try to follow the guide [here](https://gist.github.com/alextsil/f8d861b8a2fc766c06aefc0c35c083ee) for enabling GUI display on WSL.
+-`eslint-plugin-cypress`: Plugin of `eslint` for `cypress`
 
 ## Probles of Token-based Authentication
 

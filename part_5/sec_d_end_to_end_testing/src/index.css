@@ -1,0 +1,32 @@
+/* add CSS in a single file without using a CSS preprocessor */
+
+h1 {
+  color: green;
+  font-style: italic;
+}
+
+/* Style all contents wrapped around li tag */
+/* li {
+  color: grey;
+  padding-top: 3px;
+  font-size: 15px;
+} */
+
+/* Select a specific class only */
+/* Class selectors are defined with the .classname syntax */
+.note {
+  color: grey;
+  padding-top: 5px;
+  font-size: 15px;
+}
+
+.error {
+  border-style: solid;
+  color: red;
+  background: lightgrey;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
