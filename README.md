@@ -10,8 +10,8 @@ Code for exercises discussed in the course can be found at University of Helsink
 - Part 2: [Render data collection, forms, getting data and altering data in server](https://fullstackopen.com/en/part2)
 - Part 3: [Implement REST API in Node.js using Express library and storing data into MongoDB](https://fullstackopen.com/en/part3)
 - Part 4: [Structure of backend application, Testing the backend, User administration and Token Authentication](https://fullstackopen.com/en/part4)
-
 - Part 5: [Login in Frontend, props.children and proptypes, Testing React apps, End to end testing](https://fullstackopen.com/en/part5)
+- Part 6: [Flux-architecture and Redux, Many reducers, Communicating with server in a redux application, Connect](https://fullstackopen.com/en/part6)
 
 ## NPM Command
 
@@ -152,6 +152,9 @@ Caveats with testing mongoose using `Jest`: https://mongoosejs.com/docs/jest.htm
 
 It could be kinda tricky if you are remoting a WSL. Try to follow the guide [here](https://gist.github.com/alextsil/f8d861b8a2fc766c06aefc0c35c083ee) for enabling GUI display on WSL.
 -`eslint-plugin-cypress`: Plugin of `eslint` for `cypress`
+-`redux`: State management library
+- `deep-freeze`: to ensure reducer has been correctly defined as an immutable function  
+- `react-redux`: hooks API to share redux store with components
 
 ## Probles of Token-based Authentication
 
