@@ -39,6 +39,7 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+// 6.6 Step 4: Separate into action creator function
 // 6.3 Step 1: Functionality for voting anecdotes
 export const castVote = (id) => {
   return ({

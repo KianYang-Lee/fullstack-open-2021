@@ -155,6 +155,7 @@ It could be kinda tricky if you are remoting a WSL. Try to follow the guide [her
 -`redux`: State management library
 - `deep-freeze`: to ensure reducer has been correctly defined as an immutable function  
 - `react-redux`: hooks API to share redux store with components
+- `redux-devtools-extension`: Allows state of the Redux store and action that changes it to be monitored
 
 ## Probles of Token-based Authentication
 
