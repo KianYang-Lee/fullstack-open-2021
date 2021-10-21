@@ -156,6 +156,7 @@ It could be kinda tricky if you are remoting a WSL. Try to follow the guide [her
 - `deep-freeze`: to ensure reducer has been correctly defined as an immutable function  
 - `react-redux`: hooks API to share redux store with components
 - `redux-devtools-extension`: Allows state of the Redux store and action that changes it to be monitored
+- `redux-thunk`: middleware for creating asynchronous actions. Allow for action creators to be defined so that they return a function having the dispatch method of redux store as its parameter.
 
 ## Probles of Token-based Authentication
 
