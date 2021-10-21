@@ -11,14 +11,21 @@ import { initializeNotes } from './reducers/noteReducer';
 const App = () => {
   const dispatch = useDispatch();
 
-  // Effect hook to trigger first rendering
+  // // Effect hook to trigger first rendering
+  // useEffect(() => {
+  //   // Initialize state based on server data
+  //   noteService.getAll().then(notes =>
+  //     dispatch(initializeNotes(notes))
+  //   );
+  // }, [dispatch]); // Reexecute effect if dispatch 
+  // // variable changes during runtime
+
+  // Above approach is OK but communication should be abstracted
+  //  away from the components if possible, so they only
+  //  need to call the appropriate action creator
   useEffect(() => {
-    // Initialize state based on server data
-    noteService.getAll().then(notes =>
-      dispatch(initializeNotes(notes))
-    );
-  }, [dispatch]); // Reexecute effect if dispatch 
-  // variable changes during runtime
+    dispatch(initializeNotes());
+  }, [dispatch]);
 
   return (
     <div>
