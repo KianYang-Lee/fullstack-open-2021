@@ -3,6 +3,8 @@ import notificationReducer from './reducers/notificationReducer';
 import filterReducer from './reducers/filterReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import { applyMiddleware } from 'redux';
 
 // 6.9 Step 7: Defining Redux store in a separate module
 const reducer = combineReducers({
@@ -10,6 +12,10 @@ const reducer = combineReducers({
   notification: notificationReducer,
   filter: filterReducer
 });
-const store = createStore(reducer, composeWithDevTools());
+const store = createStore(
+  reducer,
+  composeWithDevTools(
+    applyMiddleware(thunk)
+  ));
 
 export default store;

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import React from 'react';
 import { castVote } from "../reducers/anecdoteReducer";
-import { setNotification, removeNotification } from "../reducers/notificationReducer";
+import { setNotification } from "../reducers/notificationReducer";
 
 const AnecdoteList = () => {
   const dispatch = useDispatch();
@@ -10,12 +10,10 @@ const AnecdoteList = () => {
   const filter = useSelector(state => state.filter);
   const anecdotes = unfilteredAnecdotes.filter(anecdote => anecdote.content.toLowerCase().includes(filter));
 
-  const vote = (id, content) => {
-    dispatch(castVote(id));
-    dispatch(setNotification(`You voted '${content}'`));
-    setTimeout(() => {
-      dispatch(removeNotification());
-    }, 5000);
+  const vote = (id, anecdote) => {
+    dispatch(castVote(id, anecdote));
+    // 6.18 Step 6: Use asynchronous action creator for notification
+    dispatch(setNotification(`You voted '${anecdote.content}'`, 10));
   };
 
   return (
@@ -27,7 +25,7 @@ const AnecdoteList = () => {
           </div>
           <div>
             has {anecdote.votes}
-            <button onClick={() => vote(anecdote.id, anecdote.content)}>vote</button>
+            <button onClick={() => vote(anecdote.id, anecdote)}>vote</button>
           </div>
         </div>
       )}

@@ -14,7 +14,14 @@ const createNew = async (content) => {
   return response.data;
 };
 
+// 6.17 Step 5: Voting
+const update = async (id, newObject) => {
+  const response = await axios.put(`${baseUrl}/${id}`, newObject);
+  return response.data;
+};
+
 export default {
   getAll,
-  createNew
+  createNew,
+  update
 };

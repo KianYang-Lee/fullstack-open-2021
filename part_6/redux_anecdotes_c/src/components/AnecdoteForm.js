@@ -1,8 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { createAnecdote } from '../reducers/anecdoteReducer';
-import { removeNotification, setNotification } from '../reducers/notificationReducer';
-import anecdoteService from '../services/anecdotes';
+import { setNotification } from '../reducers/notificationReducer';
 
 // 6.7 Step 5: Separation of AnecdoteForm
 const AnecdoteForm = () => {
@@ -13,12 +12,9 @@ const AnecdoteForm = () => {
     const content = event.target.anecdote.value;
     event.target.anecdote.value = '';
     // 6.14 Step 2
-    const newAnecdote = await anecdoteService.createNew(content);
-    dispatch(createAnecdote(newAnecdote));
-    dispatch(setNotification(`You created '${content}'`));
-    setTimeout(() => {
-      dispatch(removeNotification());
-    }, 5000);
+    // 6.16 Step 4: Asynchronous action creator
+    dispatch(createAnecdote(content));
+    dispatch(setNotification(`You created '${content}'`, 5));
   };
 
   return (
