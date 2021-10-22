@@ -12,6 +12,7 @@ Code for exercises discussed in the course can be found at University of Helsink
 - Part 4: [Structure of backend application, Testing the backend, User administration and Token Authentication](https://fullstackopen.com/en/part4)
 - Part 5: [Login in Frontend, props.children and proptypes, Testing React apps, End to end testing](https://fullstackopen.com/en/part5)
 - Part 6: [Flux-architecture and Redux, Many reducers, Communicating with server in a redux application, Connect](https://fullstackopen.com/en/part6)
+- Part 7: [React-router, Custom Hooks, More about Styles, Webpack](https://fullstackopen.com/en/part7)
 
 ## NPM Command
 
@@ -157,6 +158,7 @@ It could be kinda tricky if you are remoting a WSL. Try to follow the guide [her
 - `react-redux`: hooks API to share redux store with components
 - `redux-devtools-extension`: Allows state of the Redux store and action that changes it to be monitored
 - `redux-thunk`: middleware for creating asynchronous actions. Allow for action creators to be defined so that they return a function having the dispatch method of redux store as its parameter.
+- `react-router-dom`: Managing navigation in a React application
 
 ## Probles of Token-based Authentication
 
