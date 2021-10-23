@@ -178,3 +178,30 @@ There are different kinds of testing:
 - Integration testing
 - End-to-end testing
 - Snapshot testing
+
+## Hooks 
+
+Some commonly used Hooks that are readily availabe are `  useState`, `useEffect`, `useImperativeHandle`, etc.
+
+Hooks are not normal functions and we need to follow certain rules or limitations when using it. Some of the rules are (quoted from official React documentation):
+- Don't call Hooks inside loops, conditions, or nested functions. Instead, always use Hooks at the top level of your React function.
+- Don't call Hooks from regular JS functions. Instead, you should either call Hooks from React function components or call Hooks from custom Hooks
+
+Why would we create a custom hook? The primary purpose would be to extract component logic into reusable functions.
+
+Custom hooks are just regular JS functions which uses other hooks and adhering to rules of Hooks. Also, the name of custom hooks need to start with the word `use`.
+
+## Spread Syntax
+
+These two ways of passing props (properties) to a component achieve similar results:
+
+```js
+<Greeting firstName='Arto' lastName='Hellas' />
+
+const person = {
+  firstName: 'Arto',
+  lastName: 'Hellas'
+}
+
+<Greeting {...person} />
+```
