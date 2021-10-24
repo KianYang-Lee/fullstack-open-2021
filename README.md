@@ -162,6 +162,13 @@ It could be kinda tricky if you are remoting a WSL. Try to follow the guide [her
 - `react-bootstrap`: UI frameworks for CSS styling adapted for React usage
 - `@material-ui`: Implements Material design visual language developed by Google
 - `styled-components`: Defining styles through tagged template literals which only introduced in ES6
+- `webpack`: Bundling React application
+- `@babel/core`, `babel-loader`, `@babel/preset-react`, `@babel/polyfill`: Loader to convert JSX to JS
+- `@babel/preset-env`: Plugin which contains all which are needed to take code using all the latest features and transpile it to code which is compatible with ES5 standard
+- `css-loader`, `style-loader`: Loader for css and style injection
+- `webpack-dev-server`: rebundle it and refresh the browser automatically to ease development workflow
+- `UglifyJS`: webpack execute bundling in production mode with it for minification (optimization of JS files)
+- `promise-polyfill`: Add missing functionality to older browsers.
 
 ## Probles of Token-based Authentication
 
@@ -208,3 +215,11 @@ const person = {
 
 <Greeting {...person} />
 ```
+
+## Browser Compatibility
+
+Refer to https://caniuse.com or https://developer.mozilla.org/en-US/ for browser compatibility of different APIs.
+
+## Eject
+
+Ejecting `create-react-app` project gets rid of all the abstractions and you need to maintain the configurations manually. Better to write own webpack configuration from the get-go instead of ejecting it halfway.
