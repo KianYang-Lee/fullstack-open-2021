@@ -152,13 +152,16 @@ Caveats with testing mongoose using `Jest`: https://mongoosejs.com/docs/jest.htm
 - `cypress`: end-to-end testing library. It requires some extra configurations on the system to work. Guide can be found at https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies .
 
 It could be kinda tricky if you are remoting a WSL. Try to follow the guide [here](https://gist.github.com/alextsil/f8d861b8a2fc766c06aefc0c35c083ee) for enabling GUI display on WSL.
--`eslint-plugin-cypress`: Plugin of `eslint` for `cypress`
--`redux`: State management library
+- `eslint-plugin-cypress`: Plugin of `eslint` for `cypress`
+- `redux`: State management library
 - `deep-freeze`: to ensure reducer has been correctly defined as an immutable function  
 - `react-redux`: hooks API to share redux store with components
 - `redux-devtools-extension`: Allows state of the Redux store and action that changes it to be monitored
 - `redux-thunk`: middleware for creating asynchronous actions. Allow for action creators to be defined so that they return a function having the dispatch method of redux store as its parameter.
 - `react-router-dom`: Managing navigation in a React application
+- `react-bootstrap`: UI frameworks for CSS styling adapted for React usage
+- `@material-ui`: Implements Material design visual language developed by Google
+- `styled-components`: Defining styles through tagged template literals which only introduced in ES6
 
 ## Probles of Token-based Authentication
 
