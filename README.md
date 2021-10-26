@@ -13,6 +13,8 @@ Code for exercises discussed in the course can be found at University of Helsink
 - Part 5: [Login in Frontend, props.children and proptypes, Testing React apps, End to end testing](https://fullstackopen.com/en/part5)
 - Part 6: [Flux-architecture and Redux, Many reducers, Communicating with server in a redux application, Connect](https://fullstackopen.com/en/part6)
 - Part 7: [React-router, Custom Hooks, More about Styles, Webpack](https://fullstackopen.com/en/part7)
+- Part 8:
+- Part 12: [Introduction to Containers, Building and Configuring Environments, Basics of Orchestration](https://fullstackopen.com/en/part12/introduction_to_containers)
 
 ## NPM Command
 
@@ -51,6 +53,17 @@ Dependencies of project can be updated using:
 If all the dependencies are pre-defined in `package.json` file, execute the following to install all the dependencies at once:
 
 ```npm install```
+
+To install stable build (by following `package-lock.json`) and not adding any new dependencies, use:
+
+```npm ci```
+
+There are a few differences between `npm ci` and `npm install`, where the former:
+
+- does not update `package-lock.json`
+- install fixed version of dependency
+- delete `node_modules` folder before installing anything (fresh copy)
+- does not alter any files
 
 To test out JS code, we can use `node-repl`. The interactive mode can be initiated by:
 
