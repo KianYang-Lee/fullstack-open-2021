@@ -1,0 +1,73 @@
+Script started on 2021-10-25 12:38:05+08:00 [TERM="xterm-256color" TTY="/dev/pts/8" COLUMNS="100" LINES="15"]
+]0;kianyang@LAPTOP-7QJ8DAAJ: ~/repo/fullstack-open-2021/part_12_containers_applications/script-answers[01;32mkianyang@LAPTOP-7QJ8DAAJ[00m:[01;34m~/repo/fullstack-open-2021/part_12_containers_applications/script-answers[00m$  docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED       STATUS          PORTS                                         NAMES
+41c2f9623310   mongo     "docker-entrypoint.s…"   2 hours ago   Up 39 seconds   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend_mongo_1
+]0;kianyang@LAPTOP-7QJ8DAAJ: ~/repo/fullstack-open-2021/part_12_containers_applications/script-answers[01;32mkianyang@LAPTOP-7QJ8DAAJ[00m:[01;34m~/repo/fullstack-open-2021/part_12_containers_applications/script-answers[00m$  docker exec -it 41c bash
+Error response from daemon: Multiple IDs found with provided prefix: 41c
+]0;kianyang@LAPTOP-7QJ8DAAJ: ~/repo/fullstack-open-2021/part_12_containers_applications/script-answers[01;32mkianyang@LAPTOP-7QJ8DAAJ[00m:[01;34m~/repo/fullstack-open-2021/part_12_containers_applications/script-answers[00m$  docker exec -it 41c bash[C2 bashf bash
+]0;root@41c2f9623310: /root@41c2f9623310:/# [K]0;root@41c2f9623310: /root@41c2f9623310:/# mongo -u root -p exap mple
+MongoDB shell version v5.0.3
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("4418a750-f633-4202-a2e6-06b661b0ba1c") }
+MongoDB server version: 5.0.3
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+---
+The server generated these startup warnings when booting: 
+        2021-10-25T04:38:01.454+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2021-10-25T04:38:02.282+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.fid[3G[Jdb.todos.fi[14Gnd(){[3G[Jdb.todos.find()[18G[3G[Jdb.todos.find[1;34m([0m)[17G[3G[Jdb.todos.find([1;34m{[0m)[18G[3G[Jdb.todos.find[1;34m([0m{})[19G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("6176188af2a3e9794466b998"), "text" : "Write code again", "done" : false }
+{ "_id" : ObjectId("6176188af2a3e9794466b999"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("6176232afd75174a4261e70d"), "text" : "solving this bug", "done" : false, "__v" : 0 }
+> db.todos.insertOne(P[3G[Jdb.todos.insertOne([22G{"text": "Increase the number of tools in my toolbelt", "done": false})[3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done": false})[93G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("6176354ee7760c577fe348cd")
+}
+> [3G[Jdb.todos.insertOne({"text": "Increase the number of tools in my toolbelt", "done": false})[93G[3G[Jdb.todos.find({})[20G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("6176188af2a3e9794466b998"), "text" : "Write code again", "done" : false }
+{ "_id" : ObjectId("6176188af2a3e9794466b999"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("6176232afd75174a4261e70d"), "text" : "solving this bug", "done" : false, "__v" : 0 }
+{ "_id" : ObjectId("6176354ee7760c577fe348cd"), "text" : "Increase the number of tools in my toolbelt", "done" : false }
+> exit[3G[Jexit[7G
+bye
+]0;root@41c2f9623310: /root@41c2f9623310:/# exit
+exit
+]0;kianyang@LAPTOP-7QJ8DAAJ: ~/repo/fullstack-open-2021/part_12_containers_applications/script-answers[01;32mkianyang@LAPTOP-7QJ8DAAJ[00m:[01;34m~/repo/fullstack-open-2021/part_12_containers_applications/script-answers[00m$  exit
+exit
+
+Script done on 2021-10-25 12:41:02+08:00 [COMMAND_EXIT_CODE="0"]

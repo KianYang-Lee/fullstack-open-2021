@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  app:                      # Name of the service
+    image: express-server   # Declare wihch image to use
+    build: .                # Declare where to build if image is not found
+    ports:                  # Declare ports to publish
+      - 3000:3000
