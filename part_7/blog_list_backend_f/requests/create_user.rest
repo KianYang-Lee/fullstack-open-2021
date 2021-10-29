@@ -1,0 +1,21 @@
+# Valid request
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "kylee",
+  "password": "helloreact",
+  "name": "Kian Yang Lee"
+}
+
+#####################
+
+# Valid request
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "kylee1",
+  "password": "hellonode",
+  "name": "Kian Yang Lee"
+}

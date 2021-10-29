@@ -1,0 +1,22 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt5bGVlIiwiaWQiOiI2MTU3Yjg1NGI4YjZmNmIzNmIzMDIwMTIiLCJpYXQiOjE2MzMyMzM4MTEsImV4cCI6MTYzMzIzNzQxMX0.BTadmPcGMUNclKkUcILhTC2Bhxfwhh4DGN7O_PJeXeE
+
+{
+  "title": "Best Food in Penang (with Token)",
+  "author": "Penang Foodie",
+  "url": "www.abc.com",
+  "likes": 8
+}
+
+################ 
+# Without token
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Best Food in Penang (with Token)",
+  "author": "Penang Foodie",
+  "url": "www.abc.com",
+  "likes": 8
+}
