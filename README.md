@@ -13,8 +13,13 @@ Code for exercises discussed in the course can be found at University of Helsink
 - Part 5: [Login in Frontend, props.children and proptypes, Testing React apps, End to end testing](https://fullstackopen.com/en/part5)
 - Part 6: [Flux-architecture and Redux, Many reducers, Communicating with server in a redux application, Connect](https://fullstackopen.com/en/part6)
 - Part 7: [React-router, Custom Hooks, More about Styles, Webpack](https://fullstackopen.com/en/part7)
-- Part 8:
+- Part 8: [GraphQL-server, React and GraphQL, Database and User Administration, Login and Updating the Cache, Fragments and Subscriptions](https://fullstackopen.com/en/part8)
+- Part 11: [Introduction to CI/CD, Getting Started with GitHub Actions, Deployment, Keeping Green, Expanding Further](https://fullstackopen.com/en/part11)
 - Part 12: [Introduction to Containers, Building and Configuring Environments, Basics of Orchestration](https://fullstackopen.com/en/part12/introduction_to_containers)
+
+## More to Learn
+
+Extending from here, if you wish to learn about DevOps, refer to [here](https://devopswithdocker.com/) and if you wish to learn about cybersecurity, refer to [here](https://cybersecuritybase.mooc.fi/)
 
 ## NPM Command
 
@@ -182,6 +187,8 @@ It could be kinda tricky if you are remoting a WSL. Try to follow the guide [her
 - `webpack-dev-server`: rebundle it and refresh the browser automatically to ease development workflow
 - `UglifyJS`: webpack execute bundling in production mode with it for minification (optimization of JS files)
 - `promise-polyfill`: Add missing functionality to older browsers.
+- `apollo-server`: Creates GraphQL-playground to address `http://localhost:4000/graphql` to make queries to server
+- `graphql`
 
 ## Probles of Token-based Authentication
 
